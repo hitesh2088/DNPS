@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo Project</title>
+        <?php echo $this->headScript()->prependFile($this->baseUrl('/js/validationForm.js')) ?>
+        <link rel = "stylesheet" type="text/css" href="<?php echo $this->baseUrl('/css/style.css') ?>" />
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div id="header">
+            
+        </div>
+        <div>
+            <?php echo $this->layout()->content; ?>
+        </div>
+        <div id="footer">
+            <hr></hr>
+            <h6>&copy;copyright vaishali lodhi</h6>
+        </div>
+    </body>
+</html>
