@@ -1,0 +1,30 @@
+<div>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header ">
+                <a href="<?php echo $this->url(array('module' => '', 'controller' => '', 'action' => ''), null, true) ?>">
+                    <img border="0" src="/images/D-N-school barela.jpg" width="70" height="50">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="<?php echo $this->url(array('controller' => '', 'action' => ''), null, true) ?>">About</a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => '', 'action' => ''), null, true) ?>">Our Team</a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => '', 'action' => ''), null, true) ?>">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'index'), null, true) ?>">
+                        <span class="glyphicon glyphicon-user"></span> Administrator </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="jumbotron3">
+        <div>
+            <img src="http://www.ptmcsm.com/images/admin%20login.jpg" >
+        </div>
+        <?php echo $this->form; 
+            if(!empty($this->errormessage)){ ?>
+        <h4 class="alert alert-danger"><?php echo $this->errormessage ; } ?></h4>
+    </div>

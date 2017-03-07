@@ -1,0 +1,35 @@
+<div>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="<?php echo $this->url(array('module' => '', 'controller' => '', 'action' => ''), null, true) ?>">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'index'), null, true) ?>">
+                        <span class="glyphicon glyphicon-user"></span> Administrator </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="http://localhost/MissionSmiles/public/#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="jumbotron3">
+    <h1>Registration Form</h1><hr>
+    <br>
+    <?php echo $this->form; if (!empty($this->msg)) {?>
+    <h3 class="alert alert-success" > <?php echo $this->msg; } ?> </h3>
+    <?php if (!empty($this->errormsg)) {?>
+    <h4 class="alert alert-danger"> <?php echo $this->errormsg; } ?> </h4>
+</div>

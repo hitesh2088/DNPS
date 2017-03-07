@@ -1,0 +1,64 @@
+<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img border="0" src="http://www.asthmamd.org/images/icon_user_1.png" width="90" height="50">
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" >
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'user', 'action' => 'preview'));?>?id=<?php echo $this->id; ?>"><span class="glyphicon glyphicon-edit"> Edit Profile</span> </a></li>
+                            <li><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'user', 'action' => 'test'));?>"><span class="glyphicon glyphicon-check"> View Profile </span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact Details</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><?php  echo " Hello, ".$this->result; ?></a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"> Setting<span class="caret"></span></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'user', 'action' => 'logout'));?>"><span class="glyphicon glyphicon-log-out"> Logout </span></a></li>
+                            <li><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'user', 'action' => 'change-password'));?>"><span class="glyphicon glyphicon-edit"> Change Password</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div >
+    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/17241-200.png" >
+    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/17239-200.png" >
+</div>
+<div >
+    <table class="table table-hover" >
+        <tr>
+            <td> Registration Id </td>
+            <td><?php echo $this->id; ?></td>
+        </tr>
+        <tr>
+            <td> User Name </td>
+            <td><?php echo $this->uname; ?></td>
+        </tr>
+        <tr>
+            <td> First Name </td>
+            <td><?php echo $this->fname; ?></td>
+        </tr>
+        <tr>
+            <td> Last Name </td>
+            <td><?php echo $this->lname; ?></td>
+        </tr>
+        <tr>
+            <td> Email Id </td>
+            <td><?php echo $this->email; ?></td>
+        </tr>
+    </table>
+</div>
+<?php if(!empty($this->message)){ ?>
+    <h4 class="alert alert-info"> <?php echo $this->message; ?> </h4>
+<?php  } ?>

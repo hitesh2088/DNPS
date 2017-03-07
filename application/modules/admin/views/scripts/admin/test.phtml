@@ -1,0 +1,63 @@
+<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img border="0" src="http://www.asthmamd.org/images/icon_user_1.png" width="90" height="50">
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'test'));?>">User's Record</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'view'));?>">My Profile</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'contact'));?>">Contact Details</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><?php  echo " Hello, ".$this->user; ?></a></li>
+                    <li class="dropdown" class="active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"> Setting <span class="caret"></span></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->url(array('module' => 'admin', 'controller' => 'admin', 'action' => 'logout'));?>"><span class="glyphicon glyphicon-log-out"> Logout </span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-edit"> Change Password</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div>
+    <img src="http://logos.textgiraffe.com/logos/logo-name/Admin-designstyle-boots-m.png" />
+</div>
+<div align="center">
+    <?php if (isset($this->message)){ ?>
+    <h4 class="alert alert-success"><?php echo $this->message; } ?></h4>
+    <table class="table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>   
+        <?php $i = 0 ;
+            while($i < $this->limit)
+            {
+            ?>
+        <tr>
+            <td><?php echo $this->userinfo[$i]['id'];?> </td>
+            <td><?php echo $this->userinfo[$i]['name'];?> </td>
+            <td><?php echo $this->userinfo[$i]['fname'];?> </td>
+            <td><?php echo $this->userinfo[$i]['lname'];?> </td>
+            <td><?php echo $this->userinfo[$i]['email'];?> </td>
+            <td><?php echo $this->userinfo[$i]['pwd'];?> </td>
+            <td><a href="<?php echo $this->url(array('module' => 'admin',
+                                                 'controller' => 'admin', 
+                                                     'action' => 'delete'), null, true);?>?id=<?php echo $this->userinfo[$i]['id'];?> ">
+                    <span class="glyphicon glyphicon-trash"> Delete</span>
+                </a>
+            </td>
+        </tr>
+            <?php $i++; } ?>
+     </table>
+</div>
